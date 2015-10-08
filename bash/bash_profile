@@ -1,0 +1,25 @@
+#Ensure user-installed binaries take precedence
+export PATH=/usr/local/bin:/usr/local/share/python:~/src/personal/shell_scripts:/usr/local/opt/ruby/bin:$PATH
+export EDITOR='/usr/bin/vim'
+export MAVEN_OPTS="-Xmx1024m -XX:PermSize=512m -XX:MaxPermSize=512m"
+
+#manage Java version
+export JAVA_6_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home
+export JAVA_7_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_60.jdk/Contents/Home/
+export JAVA_8_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/
+export JAVA_HOME=$JAVA_7_HOME
+alias goJ7="export JAVA_HOME=$JAVA_7_HOME; java -version"
+alias goJ6="export JAVA_HOME=$JAVA_6_HOME; java -version"
+alias goJ8="export JAVA_HOME=$JAVA_8_HOME; java -version"
+
+#Git completion
+if [ -f ~/src/tp-src/git/contrib/completion/git-completion.bash ]; then
+  . ~/src/tp-src/git/contrib/completion/git-completion.bash
+fi
+export MITSCHEME_LIBRARY_PATH="/Applications/MIT\:GNU\ Scheme.app/Contents/Resources"
+export MIT_SCHEME_EXE="/usr/local/scheme"
+
+export JAVA_VERSION=1.7
+export JAVA_HOME='/Library/Java/JavaVirtualMachines/jdk1.7.0_60.jdk/Contents/Home'
+export CATALINA_HOME='/usr/local/Cellar/tomcat/7.0.47/libexec'
+export GROOVY_HOME='/usr/local/opt/groovy/libexec'
