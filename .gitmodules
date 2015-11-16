@@ -31,3 +31,6 @@
 [submodule "vim/bundle/vim-lucius"]
 	path = vim/bundle/vim-lucius
 	url = https://github.com/jonathanfilip/vim-lucius.git
+[submodule "vim/bundle/vim-surround"]
+	path = vim/bundle/vim-surround
+	url = https://github.com/tpope/vim-surround.git

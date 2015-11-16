@@ -20,7 +20,7 @@ set backspace=indent,eol,start    " Intuitive backspacing.
 set hidden                        " Handle multiple buffers better.
 
 set wildmenu                      " Enhanced command line completion.
-set wildmode=list:longest         " Complete files like a shell.
+set wildmode=full
 
 set ignorecase                    " Case-insensitive searching.
 set smartcase                     " But case-sensitive if expression contains a capital letter.
@@ -52,7 +52,9 @@ set laststatus=2                  " Show the status line all the time
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
 " Or use vividchalk
-colorscheme topfunky-light
+"colorscheme topfunky-light
+colorscheme lucius
+LuciusBlackHighContrast
 
 " Tab mappings.
 map <leader>tt :tabnew<cr>
@@ -74,6 +76,9 @@ map <C-l> <C-w>l
 "my own additions
 set clipboard=unnamed
 set nrformats= 		"treat all numerals as decimals regarless of leading zeros
+set history=200
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
 
 " Uncomment to use Jamis Buck's file opening plugin
 "map <Leader>t :FuzzyFinderTextMate<Enter>
@@ -103,15 +108,25 @@ au FileType xml exe ":silent 1,$!xmllint --format --recover - 2>/dev/null"
 " close NERDTree after a file is opened
 let g:NERDTreeQuitOnOpen=1
 " show hidden files in NERDTree
-let NERDTreeShowHidden=1
+let NERDTreeShowHidden=2
 " remove some files by extension
 " let NERDTreeIgnore = ['\.js.map$']
 " Toggle NERDTree
 nmap <silent> <leader>k :NERDTreeToggle<cr>
 " expand to the path of the file in the current buffer
 " nmap <silent> <leader>y :NERDTreeFind<cr>
+let NERDTreeWinSize=45
 " Fugitive Shortcuts
 nmap <silent> <leader>gs :Gstatus<cr>
 nmap <leader>ge :Gedit<cr>
 nmap <silent><leader>gr :Gread<cr>
 nmap <silent><leader>gb :Gblame<cr>
+
+"buffer navigation
+nnoremap <silent> [b :bprevious<CR>
+nnoremap <silent> ]b :bnext<CR>
+nnoremap <silent> [B :bfirst<CR>
+nnoremap <silent> [B :blast<CR>
+
+" use %% to expand the directory of the file in the current buffer
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%' 
