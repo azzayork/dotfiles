@@ -80,6 +80,9 @@ set history=200
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
 
+"clear highlighting on screen redraw
+nnoremap <silent> <C-l> : <C-u>nohlsearch<CR><C-l>
+
 " Uncomment to use Jamis Buck's file opening plugin
 "map <Leader>t :FuzzyFinderTextMate<Enter>
 
@@ -99,6 +102,9 @@ autocmd BufNewFile,BufRead *_spec.rb compiler rspec
 
 "my own additions
 au FileType xml exe ":silent 1,$!xmllint --format --recover - 2>/dev/null"
+if has("autocmd")
+	autocmd FileType ruby setlocal ts=2 sts=2 sw=2 expandtab
+endif
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
