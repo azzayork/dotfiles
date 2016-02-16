@@ -43,3 +43,6 @@
 [submodule "vim/bundle/syntastic"]
 	path = vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
+[submodule "vim/bundle/vim-angular"]
+	path = vim/bundle/vim-angular
+	url = git://github.com/burnettk/vim-angular.git
