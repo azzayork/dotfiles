@@ -84,6 +84,15 @@ cnoremap <C-n> <Down>
 "clear highlighting on screen redraw
 nnoremap <silent> <C-l> : <C-u>nohlsearch<CR><C-l>
 
+"buffer navigation
+nnoremap <silent> [b :bprevious<CR>
+nnoremap <silent> ]b :bnext<CR>
+nnoremap <silent> [B :bfirst<CR>
+nnoremap <silent> [B :blast<CR>
+
+"close location list
+map <leader>l :lclose<CR>
+
 " Uncomment to use Jamis Buck's file opening plugin
 "map <Leader>t :FuzzyFinderTextMate<Enter>
 
@@ -129,11 +138,6 @@ nmap <leader>ge :Gedit<cr>
 nmap <silent><leader>gr :Gread<cr>
 nmap <silent><leader>gb :Gblame<cr>
 
-"buffer navigation
-nnoremap <silent> [b :bprevious<CR>
-nnoremap <silent> ]b :bnext<CR>
-nnoremap <silent> [B :bfirst<CR>
-nnoremap <silent> [B :blast<CR>
 
 "syntastic
 set statusline+=%#warningmsg#
@@ -144,6 +148,12 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+"javascript-libraries-systax
+let g:used_javascript_libs = 'angularjs'
+
+"CtrlP
+let g:ctrlp_cmd = 'CtrlPBuffer'
 
 " use %% to expand the directory of the file in the current buffer
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%' 

@@ -46,3 +46,12 @@
 [submodule "vim/bundle/vim-angular"]
 	path = vim/bundle/vim-angular
 	url = git://github.com/burnettk/vim-angular.git
+[submodule "vim/bundle/vim-javascript"]
+	path = vim/bundle/vim-javascript
+	url = https://github.com/pangloss/vim-javascript.git
+[submodule "vim/bundle/javascript-libraries-syntax.vim"]
+	path = vim/bundle/javascript-libraries-syntax.vim
+	url = https://github.com/othree/javascript-libraries-syntax.vim.git
+[submodule "vim/bundle/ctrlp.vim"]
+	path = vim/bundle/ctrlp.vim
+	url = https://github.com/kien/ctrlp.vim.git
