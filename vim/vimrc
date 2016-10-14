@@ -44,8 +44,9 @@ set directory=$HOME/.vim/tmp//,.  " Keep swap files in one location
 
 " UNCOMMENT TO USE
 "set tabstop=2                    " Global tab width.
-"set shiftwidth=2                 " And again, related.
-"set expandtab                    " Use spaces instead of tabs
+set shiftwidth=4                 " And again, related.
+set expandtab                    " Use spaces instead of tabs
+set softtabstop=4
 
 set laststatus=2                  " Show the status line all the time
 " Useful status information at bottom of screen
@@ -110,8 +111,9 @@ map <leader>l :lclose<CR>
 " For the MakeGreen plugin and Ruby RSpec. Uncomment to use.
 autocmd BufNewFile,BufRead *_spec.rb compiler rspec
 
+
 "my own additions
-au FileType xml exe ":silent 1,$!xmllint --format --recover - 2>/dev/null"
+"au FileType xml exe ":silent 1,$!xmllint --format --recover - 2>/dev/null"
 if has("autocmd")
 	autocmd FileType ruby setlocal ts=2 sts=2 sw=2 expandtab
 endif
@@ -157,3 +159,6 @@ let g:ctrlp_cmd = 'CtrlPBuffer'
 
 " use %% to expand the directory of the file in the current buffer
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%' 
+
+" write read only files
+cnoremap sudow w !sudo tee % >/dev/null
