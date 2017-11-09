@@ -13,8 +13,8 @@ alias goJ6="export JAVA_HOME=$JAVA_6_HOME; java -version"
 alias goJ8="export JAVA_HOME=$JAVA_8_HOME; java -version"
 
 #Git completion
-if [ -f ~/src/tp-src/git/contrib/completion/git-completion.bash ]; then
-  . ~/src/tp-src/git/contrib/completion/git-completion.bash
+if [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
+  . /usr/local/etc/bash_completion.d/git-completion.bash 
 fi
 export MITSCHEME_LIBRARY_PATH="/Applications/MIT\:GNU\ Scheme.app/Contents/Resources"
 export MIT_SCHEME_EXE="/usr/local/scheme"
